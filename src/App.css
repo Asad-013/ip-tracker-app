@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  background-color: #f0f2f5; /* Light background color */
+  color: #333; /* Default text color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+
+.dark-mode {
+  background-color: #121212; /* Dark background color */
+  color: #e0e0e0; /* Light text color for dark mode */
+}
+
+.header {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.dark-mode .header {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .header h1 {
+  color: #f0f0f0;
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #f0f0f0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ip-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 350px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.ip-input:focus {
+  border-color: #007bff;
+}
+
+.search-button, .geolocation-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.geolocation-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.geolocation-button:hover {
+  background-color: #218838;
+}
+
+.dark-mode .search-button, .dark-mode .geolocation-button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode .search-button:hover {
+  background-color: #555;
+}
+
+.dark-mode .geolocation-button:hover {
+  background-color: #444;
+}
+
+.user-ip {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.error, .loading {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.info {
+  width: 100%;
+  max-width: 800px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .weather-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.forecast h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap cards to new lines on smaller screens */
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.forecast-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  flex: 1;
+  margin: 5px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-mode .forecast-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.history {
+  padding: 20px;
+  text-align: center;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Map container adjustments */
+.map {
+  height: 400px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Dark mode button adjustments */
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #f0f0f0;
 }
